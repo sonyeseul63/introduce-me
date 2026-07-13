@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>번외 · 야구 직관 - 기승전운</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-hanok-cream text-[#3c3f3d] antialiased overflow-x-hidden">
+    <nav class="site-nav" aria-label="취미 페이지 내비게이션">
+        <div class="site-nav-inner">
+            <a href="ai.html" class="site-nav-logo" aria-label="기승전운 메인 페이지">
+                기승전<span>운</span>
+            </a>
+
+            <ul class="site-nav-list">
+                <li><a href="current-hobbies.html" class="site-nav-link">지금 즐기는 취미</a></li>
+                <li><a href="new-hobbies.html" class="site-nav-link">새롭게 도전할 취미</a></li>
+                <li><a href="baseball.html" class="site-nav-link active" aria-current="page">번외 · 야구 직관</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-heading">
+            <span class="text-xs font-bold text-[#a27b5c] tracking-wider uppercase block mb-1">
+                Favorite Sport
+            </span>
+            <h1 class="serif-title text-2xl md:text-3xl font-bold text-[#2e302f]">
+                나의 최애 구단과 야구 직관
+            </h1>
+            <div class="w-12 h-1 bg-[#a27b5c] mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <section class="pb-24 px-6">
+            <div class="max-w-4xl mx-auto bg-[#2e302f] text-white p-7 md:p-9 rounded-2xl shadow-sm relative overflow-hidden">
+                <div class="absolute -top-20 -right-16 w-56 h-56 rounded-full border-[28px] border-white/5 pointer-events-none" aria-hidden="true"></div>
+                <div class="absolute -bottom-28 -left-20 w-60 h-60 rounded-full bg-[#fca5a5]/5 pointer-events-none" aria-hidden="true"></div>
+
+                <div class="relative z-10">
+                    <h2 class="serif-title text-xl md:text-2xl font-bold text-[#fca5a5] mb-4 flex items-center gap-2">
+                        <span>⚾</span>
+                        KIA 타이거즈
+                    </h2>
+
+                    <p class="text-xs md:text-sm text-[#d1d5db] mb-7 leading-relaxed max-w-2xl">
+                        광주 기아 챔피언스 필드에서 직접 경기를 보며 KIA 타이거즈를 응원하는 것을 좋아합니다.
+                        응원가와 함성이 가득한 경기장에서 승부가 바뀌는 순간을 함께하는 것이 야구 직관의 가장 큰 매력입니다.
+                    </p>
+
+                    <p class="text-[10px] text-[#9ca3af] mb-3">👇 선수를 눌러 소개를 확인해 보세요.</p>
+
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <button
+                            type="button"
+                            class="player-card text-left bg-[#3e4240] p-4 rounded-xl border border-white/10 cursor-pointer hover:bg-[#4d514f]"
+                            data-player="doyoung"
+                            aria-expanded="true"
+                            aria-controls="desc-doyoung"
+                        >
+                            <span class="font-bold text-white flex items-center justify-between text-xs">
+                                <span>👑 타자: 김도영</span>
+                                <span id="arrow-doyoung" class="text-[#fca5a5] transition-transform rotate-180" aria-hidden="true">▼</span>
+                            </span>
+
+                            <span id="desc-doyoung" class="block text-[#d1d5db] text-xs mt-2 pt-2 border-t border-white/5 leading-relaxed">
+                                압도적인 호쾌함으로 경기를 시원하게 뚫어주는 팀의 핵심.
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="player-card text-left bg-[#3e4240] p-4 rounded-xl border border-white/10 cursor-pointer hover:bg-[#4d514f]"
+                            data-player="youngtak"
+                            aria-expanded="false"
+                            aria-controls="desc-youngtak"
+                        >
+                            <span class="font-bold text-white flex items-center justify-between text-xs">
+                                <span>✨ 투수: 성영탁</span>
+                                <span id="arrow-youngtak" class="text-[#fca5a5] transition-transform" aria-hidden="true">▼</span>
+                            </span>
+
+                            <span id="desc-youngtak" class="hidden text-[#d1d5db] text-xs mt-2 pt-2 border-t border-white/5 leading-relaxed">
+                                마운드 위에서 씩씩하게 자기 몫을 다하는 당찬 기대주.
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#2e302f] text-[#a1a8a4] py-16 px-6 text-center text-xs md:text-sm border-t border-[#e8dfd8]">
+        <div class="max-w-xl mx-auto space-y-4">
+            <p class="serif-title font-semibold text-[#faf8f5] text-base">“함성과 응원가 속에서 함께 만드는 한 경기”</p>
+            <div class="w-16 h-px bg-white/10 mx-auto my-6"></div>
+            <p class="text-[#848b87] text-[10px]">© 2026 起承轉運. Baseball edition.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('[data-player]').forEach((button) => {
+            button.addEventListener('click', () => {
+                const playerId = button.dataset.player;
+                const description = document.getElementById(`desc-${playerId}`);
+                const arrow = document.getElementById(`arrow-${playerId}`);
+                const isHidden = description.classList.contains('hidden');
+
+                description.classList.toggle('hidden');
+                description.classList.toggle('block', isHidden);
+                arrow.classList.toggle('rotate-180', isHidden);
+                button.setAttribute('aria-expanded', String(isHidden));
+            });
+        });
+    </script>
+</body>
+</html>

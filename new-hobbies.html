@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>새롭게 도전할 취미 - 기승전운</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-hanok-cream text-[#3c3f3d] antialiased overflow-x-hidden">
+    <nav class="site-nav" aria-label="취미 페이지 내비게이션">
+        <div class="site-nav-inner">
+            <a href="ai.html" class="site-nav-logo" aria-label="기승전운 메인 페이지">
+                기승전<span>운</span>
+            </a>
+
+            <ul class="site-nav-list">
+                <li><a href="current-hobbies.html" class="site-nav-link">지금 즐기는 취미</a></li>
+                <li><a href="new-hobbies.html" class="site-nav-link active" aria-current="page">새롭게 도전할 취미</a></li>
+                <li><a href="baseball.html" class="site-nav-link">번외 · 야구 직관</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-heading">
+            <span class="text-xs font-bold text-[#a27b5c] tracking-wider uppercase block mb-1">
+                New Interests
+            </span>
+            <h1 class="serif-title text-2xl md:text-3xl font-bold text-[#2e302f]">
+                새롭게 도전하고 싶은 취미
+            </h1>
+            <div class="w-12 h-1 bg-[#a27b5c] mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <section class="pb-24 px-6 max-w-4xl mx-auto">
+            <div id="interestTriggerWrapper" class="flex justify-center">
+                <button
+                    id="interestTrigger"
+                    type="button"
+                    class="interest-trigger group w-full max-w-md bg-white border border-wood rounded-2xl px-7 py-6 shadow-sm hover:-translate-y-1 hover:shadow-md active:scale-[0.98] transition-all duration-300"
+                    aria-controls="interestCards"
+                    aria-expanded="false"
+                >
+                    <span class="flex items-center justify-between gap-5">
+                        <span class="text-left">
+                            <span class="text-[10px] font-bold tracking-wider text-[#a27b5c] mb-1 block">CLICK TO DISCOVER</span>
+                            <span class="serif-title text-lg font-bold text-[#2e302f] block">나의 새로운 관심사는?</span>
+                            <span class="text-xs text-[#8c918e] mt-1 block">눌러서 확인해 보세요.</span>
+                        </span>
+
+                        <span class="w-12 h-12 flex-shrink-0 rounded-full bg-[#2e302f] text-white flex items-center justify-center text-xl group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+                            ✨
+                        </span>
+                    </span>
+                </button>
+            </div>
+
+            <div id="interestCards" class="hidden grid md:grid-cols-2 gap-6 items-stretch mt-8" aria-live="polite">
+                <article class="interest-card bg-white p-7 rounded-2xl border border-wood shadow-sm">
+                    <div class="w-12 h-12 rounded-2xl bg-[#2e302f] text-white flex items-center justify-center text-2xl mb-5">🎱</div>
+                    <span class="text-[10px] font-bold tracking-wider text-[#a27b5c]">NEW INTEREST 01</span>
+                    <h2 class="serif-title text-xl font-bold text-[#2e302f] mt-1 mb-3">당구</h2>
+                    <p class="text-sm text-[#5c605e] leading-relaxed">
+                        공을 세게 치는 것보다 각도와 힘을 조절하는 과정이 재미있어 새롭게 배워보고 싶은 취미입니다.
+                        생각한 경로대로 공이 움직일 때 느껴지는 짜릿함을 제대로 경험해 보고 싶습니다.
+                    </p>
+                </article>
+
+                <article class="interest-card bg-white p-7 rounded-2xl border border-wood shadow-sm">
+                    <div class="w-12 h-12 rounded-2xl bg-[#a27b5c] text-white flex items-center justify-center text-2xl mb-5">⛰️</div>
+                    <span class="text-[10px] font-bold tracking-wider text-[#a27b5c]">NEW INTEREST 02</span>
+                    <h2 class="serif-title text-xl font-bold text-[#2e302f] mt-1 mb-3">등산</h2>
+                    <p class="text-sm text-[#5c605e] leading-relaxed">
+                        자연 속을 걸으며 복잡한 생각을 비우고, 정상에 도착했을 때의 성취감도 느껴보고 싶습니다.
+                        기록에 욕심내기보다는 풍경을 즐기며 천천히 시작하려 합니다.
+                    </p>
+                </article>
+            </div>
+
+            <p id="interestNote" class="hidden mt-6 text-center text-[11px] text-[#8c918e]">
+                * 무리하지 않고 천천히 즐기는 새로운 탐험입니다.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-[#2e302f] text-[#a1a8a4] py-16 px-6 text-center text-xs md:text-sm border-t border-[#e8dfd8]">
+        <div class="max-w-xl mx-auto space-y-4">
+            <p class="serif-title font-semibold text-[#faf8f5] text-base">“새로운 재미는 한 번의 시도에서 시작됩니다”</p>
+            <div class="w-16 h-px bg-white/10 mx-auto my-6"></div>
+            <p class="text-[#848b87] text-[10px]">© 2026 起承轉運. New interests.</p>
+        </div>
+    </footer>
+
+    <script>
+        const interestTrigger = document.getElementById('interestTrigger');
+        let interestsRevealed = false;
+
+        interestTrigger.addEventListener('click', () => {
+            if (interestsRevealed) return;
+
+            interestsRevealed = true;
+
+            const cardsContainer = document.getElementById('interestCards');
+            const cards = cardsContainer.querySelectorAll('.interest-card');
+            const note = document.getElementById('interestNote');
+
+            cardsContainer.classList.remove('hidden');
+            interestTrigger.setAttribute('aria-expanded', 'true');
+
+            cards.forEach((card, index) => {
+                window.setTimeout(() => card.classList.add('show'), index * 180);
+            });
+
+            window.setTimeout(() => note.classList.remove('hidden'), 500);
+
+            interestTrigger.innerHTML = `
+                <span class="flex items-center justify-center gap-2 text-sm font-bold text-[#2e302f]">
+                    <span>🎱</span>
+                    새로운 관심사가 공개되었습니다
+                    <span>⛰️</span>
+                </span>
+            `;
+
+            interestTrigger.disabled = true;
+            interestTrigger.classList.remove('hover:-translate-y-1', 'hover:shadow-md', 'active:scale-[0.98]');
+            createInterestConfetti(interestTrigger);
+        });
+
+        function createInterestConfetti(button) {
+            const rect = button.getBoundingClientRect();
+            const startX = rect.left + rect.width / 2;
+            const startY = rect.top + rect.height / 2;
+            const items = ['✨', '🎱', '⛰️', '🌿', '⭐', '✨', '🎱', '⛰️', '🌿', '⭐', '✨', '🎱', '⛰️', '🌿', '⭐'];
+
+            items.forEach((item, index) => {
+                const confetti = document.createElement('span');
+                const angle = (Math.PI * 2 * index) / items.length + Math.random() * 0.35;
+                const distance = 80 + Math.random() * 130;
+                const moveX = Math.cos(angle) * distance;
+                const moveY = Math.sin(angle) * distance;
+                const rotation = Math.random() * 720 - 360;
+
+                confetti.className = 'interest-confetti';
+                confetti.textContent = item;
+                confetti.style.left = `${startX}px`;
+                confetti.style.top = `${startY}px`;
+                confetti.style.setProperty('--move-x', `${moveX}px`);
+                confetti.style.setProperty('--move-y', `${moveY}px`);
+                confetti.style.setProperty('--rotate', `${rotation}deg`);
+                confetti.style.animationDelay = `${Math.random() * 100}ms`;
+
+                document.body.appendChild(confetti);
+                window.setTimeout(() => confetti.remove(), 1100);
+            });
+        }
+    </script>
+</body>
+</html>

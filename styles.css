@@ -1,0 +1,305 @@
+:root {
+    --giwa: #2e302f;
+    --wood: #a27b5c;
+    --wood-light: #e8dfd8;
+    --cream: #faf8f5;
+    --beige: #f3efe6;
+    --lavender: #f4effa;
+    --body-text: #3c3f3d;
+    --sub-text: #5c605e;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body > main {
+    flex: 1 0 auto;
+}
+
+body > footer {
+    flex-shrink: 0;
+}
+
+
+.serif-title {
+    font-family: 'Noto Serif KR', serif;
+}
+
+.color-giwa {
+    color: var(--giwa);
+}
+
+.color-wood {
+    color: var(--wood);
+}
+
+.border-wood {
+    border-color: var(--wood-light);
+}
+
+.bg-hanok-cream {
+    background-color: var(--cream);
+}
+
+/* 공용 상단 내비게이션 */
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(250, 248, 245, 0.94);
+    /* border-bottom: 1px solid var(--wood-light); */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.site-nav-inner {
+    max-width: 1024px;
+    min-height: 68px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.site-nav-logo {
+    flex-shrink: 0;
+    color: var(--giwa);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav-logo span {
+    color: var(--wood);
+}
+
+.site-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav-link {
+    position: relative;
+    display: block;
+    padding: 23px 2px 20px;
+    color: #747975;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    width: 0;
+    height: 2px;
+    background: var(--wood);
+    border-radius: 999px;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+}
+
+.site-nav-link:hover {
+    color: var(--giwa);
+    transform: translateY(-1px);
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after {
+    width: 100%;
+}
+
+.site-nav-link.active {
+    color: var(--giwa);
+    font-weight: 700;
+}
+
+/* 상세 페이지 상단 제목 영역 */
+.page-heading {
+    padding: 72px 24px 48px;
+    text-align: center;
+}
+
+.page-heading-description {
+    max-width: 600px;
+    margin: 20px auto 0;
+    color: #737875;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 메인 페이지 상세 페이지 이동 카드 */
+.page-link-card {
+    position: relative;
+    display: flex;
+    min-height: 230px;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.page-link-card:hover {
+    transform: translateY(-6px);
+    border-color: #d4c4b7;
+    box-shadow: 0 16px 34px rgba(46, 48, 47, 0.1);
+}
+
+.page-link-arrow {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: var(--giwa);
+    color: white;
+    transition: transform 0.25s ease;
+}
+
+.page-link-card:hover .page-link-arrow {
+    transform: translateX(4px);
+}
+
+/* 새 관심사 카드 등장 효과 */
+@keyframes interestPop {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.85);
+    }
+    70% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.interest-card {
+    opacity: 0;
+}
+
+.interest-card.show {
+    animation: interestPop 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 컨페티 효과 */
+@keyframes confettiPop {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform:
+            translate(
+                calc(-50% + var(--move-x)),
+                calc(-50% + var(--move-y))
+            )
+            scale(1.1)
+            rotate(var(--rotate));
+    }
+}
+
+.interest-confetti {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 20px;
+    animation: confettiPop 850ms ease-out forwards;
+}
+
+/* 야구 선수 카드 */
+.player-card {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-2px);
+}
+
+/* 접근성: 키보드 포커스 */
+.site-nav-link:focus-visible,
+.site-nav-logo:focus-visible,
+.page-link-card:focus-visible,
+.interest-trigger:focus-visible,
+.player-card:focus-visible {
+    outline: 3px solid rgba(162, 123, 92, 0.35);
+    outline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    .site-nav-inner {
+        min-height: auto;
+        padding: 14px 18px 0;
+        display: block;
+    }
+
+    .site-nav-logo {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    .site-nav-list {
+        gap: 22px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .site-nav-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .site-nav-link {
+        padding: 10px 0 16px;
+        font-size: 12px;
+    }
+
+    .site-nav-link::after {
+        bottom: 8px;
+    }
+
+    .page-heading {
+        padding: 56px 20px 34px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
